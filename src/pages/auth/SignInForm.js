@@ -10,8 +10,21 @@ import { Link } from "react-router-dom";
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
+import { useState } from "react";
 
 function SignInForm() {
+  const [signInData, setSignInData] = useState({
+    username: "",
+    password: "",
+  });
+  const { username, password } = signInData;
+
+  const handleChange = (event) => {
+    setSignInData({
+      ...signInData,
+      [event.target.name]: event.target.value,
+    });
+  };
 
   return (
     <Row className={styles.Row}>
@@ -27,6 +40,7 @@ function SignInForm() {
                 name="username"
                 className={styles.Input}
                 value={username}
+                onChange={handleChange}
               />
             </Form.Group>
 
@@ -38,6 +52,7 @@ function SignInForm() {
                 name="password"
                 className={styles.Input}
                 value={password}
+                onChange={handleChange}
               />
             </Form.Group>
             <Button
