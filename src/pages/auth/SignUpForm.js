@@ -6,6 +6,8 @@ import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
 import { Form, Button, Image, Col, Row, Container, Alert } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
+import axios from "axios";
 
 const SignUpForm = () => {
   const [signUpData, setSignUpData] = useState({
@@ -17,6 +19,8 @@ const SignUpForm = () => {
 
   const [errors, setErrors] = useState({});
 
+  const history = useHistory();
+
   const handleChange = (event) => {
     setSignUpData({
       ...signUpData,
@@ -24,6 +28,15 @@ const SignUpForm = () => {
     });
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      await axios.post("/dj-rest-auth/registration/", signUpData);
+      history.push("/signin");
+    } catch (err) {
+      setErrors(err.response?.data);
+    }
+  };
 
   return (
     <Row className={styles.Row}>
@@ -31,7 +44,7 @@ const SignUpForm = () => {
         <Container className={`${appStyles.Content} p-4 `}>
           <h1 className={styles.Header}>sign up</h1>
 
-          <Form>
+          <Form onSubmit={handleSubmit}>
             <Form.Group controlId="username">
               <Form.Label className="d-none">username</Form.Label>
               <Form.Control
