@@ -1,5 +1,6 @@
 import styles from "./App.module.css";
 import NavBar from "./components/NavBar";
+import CarCreateForm from "./pages/cars/CarCreateForm"
 import { Container } from "react-bootstrap";
 import { Route, Switch } from "react-router-dom";
 import "./api/axiosDefaults";
@@ -15,6 +16,7 @@ function App() {
           <Route exact path="/" render={() => <h1>Home page</h1>} />
           <Route exact path="/signin" render={() => <SignInForm />} />
           <Route exact path="/signup" render={() => <SignUpForm />} />
+          <Route exact path="/cars/create" render={() => <CarCreateForm /> } />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>
