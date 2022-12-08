@@ -4,6 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
+import Alert from "react-bootstrap/Alert";
 
 import Upload from "../../assets/upload.png";
 import styles from "../../styles/CarCreateEditForm.module.css";
@@ -97,6 +98,12 @@ function CarCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
+      {errors?.title?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
       <Form.Group>
         <Form.Label>Brand</Form.Label>
         <Form.Control
@@ -132,6 +139,12 @@ function CarCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
+      {errors?.description?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
       <Form.Group>
         <Form.Label>Mileage</Form.Label>
         <Form.Control
@@ -143,6 +156,11 @@ function CarCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
+      {errors?.mileage?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
       <Form.Group>
         <Form.Label>Year</Form.Label>
         <Form.Control
@@ -154,6 +172,11 @@ function CarCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
+      {errors?.year?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
       <Form.Group>
         <Form.Label>Gearbox</Form.Label>
         <Form.Control
@@ -193,7 +216,11 @@ function CarCreateForm() {
           onChange={handleChange}
         />
       </Form.Group>
-
+      {errors?.price?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
         onClick={() => {}}
