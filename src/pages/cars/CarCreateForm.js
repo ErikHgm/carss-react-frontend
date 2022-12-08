@@ -10,9 +10,13 @@ import styles from "../../styles/CarCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Asset from "../../components/Asset";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { axiosReq } from "../../api/axiosDefaults";
 
 function CarCreateForm() {
+  const [errors, setErrors] = useState({});
+
   const [carData, setCarData] = useState({
     title: "",
     brand: "",
@@ -22,10 +26,23 @@ function CarCreateForm() {
     gearbox: "",
     fueltype: "",
     price: "",
-    image:"",
+    image: "",
   });
-  const { title, brand, description, mileage, year, gearbox, fueltype, price, image } =
-    carData;
+
+  const {
+    title,
+    brand,
+    description,
+    mileage,
+    year,
+    gearbox,
+    fueltype,
+    price,
+    image,
+  } = carData;
+
+  const imageInput = useRef(null);
+  const history = useHistory();
 
   const handleChange = (event) => {
     setCarData({
@@ -41,6 +58,31 @@ function CarCreateForm() {
         ...carData,
         image: URL.createObjectURL(event.target.files[0]),
       });
+    }
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+
+    formData.append("title", title);
+    formData.append("brand", brand);
+    formData.append("description", description);
+    formData.append("mileage", mileage);
+    formData.append("year", year);
+    formData.append("gearbox", gearbox);
+    formData.append("fueltype", fueltype);
+    formData.append("price", price);
+    formData.append("image", imageInput.current.files[0]);
+
+    try {
+      const { data } = await axiosReq.post("/cars/", formData);
+      history.push(`/cars/${data.id}`);
+    } catch (err) {
+      console.log(err);
+      if (err.response?.status !== 401) {
+        setErrors(err.response?.data);
+      }
     }
   };
 
@@ -165,7 +207,7 @@ function CarCreateForm() {
   );
 
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <Row>
         <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
           <Container
@@ -202,6 +244,7 @@ function CarCreateForm() {
                 id="image-upload"
                 accept="image/*"
                 onChange={handleChangeImage}
+                ref={imageInput}
               />
             </Form.Group>
             <div className="d-md-none">{textFields}</div>
