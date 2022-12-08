@@ -9,8 +9,29 @@ import Upload from "../../assets/upload.png";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Asset from "../../components/Asset";
+import { useState } from "react";
 
 function CarCreateForm() {
+  const [carData, setCarData] = useState({
+    title: "",
+    brand: "",
+    description: "",
+    mileage: "",
+    year: "",
+    gearbox: "",
+    fueltype: "",
+    price: "",
+  });
+  const { title, brand, description, mileage, year, gearbox, fueltype, price } =
+    carData;
+
+  const handleChange = (event) => {
+    setCarData({
+      ...carData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
   const textFields = (
     <div className="text-center">
       <Form.Group>
@@ -24,7 +45,8 @@ function CarCreateForm() {
       </Form.Group>
       <Form.Group>
         <Form.Label>Brand</Form.Label>
-        <Form.Select
+        <Form.Control
+          as="select"
           type="text"
           name="brand"
           value={brand}
@@ -43,8 +65,9 @@ function CarCreateForm() {
           <option value="tesla">Tesla</option>
           <option value="renault">Renault</option>
           <option value="peugeot">Peugeot</option>
-        </Form.Select>
+        </Form.Control>
       </Form.Group>
+
       <Form.Group>
         <Form.Label>Description</Form.Label>
         <Form.Control
@@ -60,7 +83,7 @@ function CarCreateForm() {
         <Form.Control
           type="number"
           min="0"
-          step="1.00"
+          step="100.00"
           name="mileage"
           value={mileage}
           onChange={handleChange}
@@ -79,7 +102,8 @@ function CarCreateForm() {
       </Form.Group>
       <Form.Group>
         <Form.Label>Gearbox</Form.Label>
-        <Form.Select
+        <Form.Control
+          as="select"
           type="text"
           name="gearbox"
           value={gearbox}
@@ -87,11 +111,12 @@ function CarCreateForm() {
         >
           <option value="automatic">Automatic</option>
           <option value="manual">Manual</option>
-        </Form.Select>
+        </Form.Control>
       </Form.Group>
       <Form.Group>
-        <Form.Label>Fueltyp</Form.Label>
-        <Form.Select
+        <Form.Label>Fueltype</Form.Label>
+        <Form.Control
+          as="select"
           type="text"
           name="fueltype"
           value={fueltype}
@@ -101,7 +126,7 @@ function CarCreateForm() {
           <option value="diesel">Diesel</option>
           <option value="electric">Electric</option>
           <option value="hybrid">Hybrid</option>
-        </Form.Select>
+        </Form.Control>
       </Form.Group>
       <Form.Group>
         <Form.Label>Price</Form.Label>
