@@ -7,7 +7,7 @@ assignees: ErikHgm
 
 ---
 
-*As a*  , *I can* *so that*
+*As a*  user, *I can* *so that* 
 
 
 ## Acceptance Criteria
