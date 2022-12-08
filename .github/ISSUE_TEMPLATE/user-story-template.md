@@ -2,8 +2,8 @@
 name: User Story template
 about: Template for user stories
 title: 'User Story:'
-labels: ''
-assignees: ''
+labels: must have
+assignees: ErikHgm
 
 ---
 
