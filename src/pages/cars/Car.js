@@ -3,6 +3,7 @@ import { Card, Media } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import styles from "../../styles/Car.module.css";
 
 const Car = (props) => {
   const {
@@ -30,8 +31,11 @@ const Car = (props) => {
   const is_owner = currentUser?.username === owner;
 
   return (
-    <Card>
+    <Card className={styles.Car}>
       <Card.Body>
+      <Link to={`/cars/${id}`}>
+        <Card.Img src={image} alt={title} />
+      </Link>
         <Media className="align-items-center justify-content-between">
           <Link to={`/profiles/${profile_id}`}>
             <Avatar src={profile_image} height={55} />
