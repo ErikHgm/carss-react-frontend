@@ -23,17 +23,17 @@ function App() {
             exact
             path="/"
             render={() => (
-              <CarsList
-                message="No results found, adjust the search keyword."
-                filter={`owner__followed__owner__profile=${profile_id}&`}
-              />
+              <CarsList message="No results found, adjust the search keyword." />
             )}
           />
           <Route
             exact
             path="/feed"
             render={() => (
-              <CarsList message="No results found, adjust the search keyword or follow a user." />
+              <CarsList
+                message="No results found, adjust the search keyword or follow a user."
+                filter={`owner__followed__owner__profile=${profile_id}&`}
+              />
             )}
           />
           <Route
