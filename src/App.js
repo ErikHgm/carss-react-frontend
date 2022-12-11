@@ -9,6 +9,7 @@ import SignInForm from "./pages/auth/SignInForm";
 import CarPage from "./pages/cars/CarPage";
 import CarsList from "./pages/cars/CarsList";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
+import CarEditForm from "./pages/cars/CarEditForm";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -50,6 +51,7 @@ function App() {
           <Route exact path="/signup" render={() => <SignUpForm />} />
           <Route exact path="/cars/create" render={() => <CarCreateForm />} />
           <Route exact path="/cars/:id" render={() => <CarPage />} />
+          <Route exact path="/cars/:id/edit" render={() => <CarEditForm />} />
           <Route render={() => <p>Page not found!</p>} />
         </Switch>
       </Container>
