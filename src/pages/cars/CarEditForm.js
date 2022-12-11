@@ -11,9 +11,12 @@ import styles from "../../styles/CarCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Asset from "../../components/Asset";
-import { useRef, useState } from "react";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useEffect, useRef, useState } from "react";
 import { axiosReq } from "../../api/axiosDefaults";
+import {
+  useHistory,
+  useParams,
+} from "react-router-dom/cjs/react-router-dom.min";
 
 function CarEditForm() {
   const [errors, setErrors] = useState({});
@@ -44,6 +47,45 @@ function CarEditForm() {
 
   const imageInput = useRef(null);
   const history = useHistory();
+  const { id } = useParams();
+
+  useEffect(() => {
+    const handleMount = async () => {
+      try {
+        const { data } = await axiosReq.get(`/cars/${id}/`);
+        const {
+          title,
+          brand,
+          description,
+          mileage,
+          year,
+          gearbox,
+          fueltype,
+          price,
+          image,
+          is_owner,
+        } = data;
+
+        is_owner
+          ? setCarData({
+              title,
+              brand,
+              description,
+              mileage,
+              year,
+              gearbox,
+              fueltype,
+              price,
+              image,
+            })
+          : history.push("/");
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    handleMount();
+  }, [history, id]);
 
   const handleChange = (event) => {
     setCarData({
