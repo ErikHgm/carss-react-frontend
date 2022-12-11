@@ -21,7 +21,7 @@ function CarsList({ message, filter = "" }) {
   useEffect(() => {
     const fetchCars = async () => {
       try {
-        const { data } = await axiosReq.get(`/cars/?${filter}`);
+        const { data } = await axiosReq.get(`/cars/?${filter}search=${query}`);
         setCars(data);
         setHasLoaded(true);
       } catch (err) {
