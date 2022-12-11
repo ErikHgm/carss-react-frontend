@@ -3,6 +3,7 @@ import { axiosReq } from "../../api/axiosDefaults";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import appStyles from "../../App.module.css";
 import { Container } from "react-bootstrap";
+import Asset from "../../components/Asset";
 
 const PopularProfiles = () => {
   const [profileData, setProfileData] = useState({
@@ -32,10 +33,16 @@ const PopularProfiles = () => {
 
   return (
     <Container className={appStyles.Content}>
-      <p>Top Sellers:</p>
-      {popularProfiles.results.map((profile) => (
-        <p key={profile.id}>{profile.owner}</p>
-      ))}
+      {popularProfiles.results.length ? (
+        <>
+          <p>Top Sellers:</p>
+          {popularProfiles.results.map((profile) => (
+            <p key={profile.id}>{profile.owner}</p>
+          ))}
+        </>
+      ) : (
+        <Asset spinner />
+      )}
     </Container>
   );
 };
