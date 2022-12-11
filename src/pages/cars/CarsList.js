@@ -9,6 +9,8 @@ import Car from "./Car";
 import NoResults from "../../assets/no-results.png";
 import appStyles from "../../App.module.css";
 import styles from "../../styles/CarsList.module.css";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { fetchMoreData } from "../../utils/utils";
 
 function CarsList({ message, filter = "" }) {
   const [cars, setCars] = useState({ results: [] });
@@ -57,9 +59,15 @@ function CarsList({ message, filter = "" }) {
         {hasLoaded ? (
           <>
             {cars.results.length ? (
-              cars.results.map((car) => (
-                <Car key={car.id} {...car} setCars={setCars} />
-              ))
+              <InfiniteScroll
+                children={cars.results.map((car) => (
+                  <Car key={car.id} {...car} setCars={setCars} />
+                ))}
+                dataLength={cars.results.length}
+                loader={<Asset spinner />}
+                hasMore={!!cars.next}
+                next={() => fetchMoreData(cars, setCars)}
+              />
             ) : (
               <Container className={appStyles.Content}>
                 <Asset src={NoResults} message={message} />
