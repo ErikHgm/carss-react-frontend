@@ -2,6 +2,7 @@ import React from "react";
 import { Card, ListGroup, Media } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import { axiosRes } from "../../api/axiosDefaults";
 import Avatar from "../../components/Avatar";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
@@ -31,7 +32,16 @@ const Car = (props) => {
   const history = useHistory();
 
   const handleEdit = () => {
-    history.push(`/posts/${id}/edit`);
+    history.push(`/cars/${id}/edit`);
+  };
+
+  const handleDelete = async () => {
+    try {
+      await axiosRes.delete(`/cars/${id}/`);
+      history.goBack();
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -64,7 +74,12 @@ const Car = (props) => {
           </Link>
           <div className="d-flex align-items-center">
             <span>Added: {updated_at}</span>
-            {is_owner && carPage && <MoreDropdown handleEdit={handleEdit} />}
+            {is_owner && carPage && (
+              <MoreDropdown
+                handleEdit={handleEdit}
+                handleDelete={handleDelete}
+              />
+            )}
           </div>
         </Media>
       </Card.Body>
