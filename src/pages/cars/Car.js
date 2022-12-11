@@ -15,7 +15,6 @@ const Car = (props) => {
     owner,
     profile_id,
     profile_image,
-    saved_id,
     title,
     brand,
     description,
