@@ -11,6 +11,7 @@ import appStyles from "../../App.module.css";
 import styles from "../../styles/CarsList.module.css";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
+import PopularProfiles from "../profiles/PopularProfiles";
 
 function CarsList({ message, filter = "" }) {
   const [cars, setCars] = useState({ results: [] });
@@ -81,7 +82,7 @@ function CarsList({ message, filter = "" }) {
         )}
       </Col>
       <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
-        <p>Popular profiles for desktop</p>
+        <PopularProfiles />
       </Col>
     </Row>
   );
