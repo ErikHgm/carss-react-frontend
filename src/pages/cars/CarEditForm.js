@@ -116,11 +116,12 @@ function CarEditForm() {
     formData.append("gearbox", gearbox);
     formData.append("fueltype", fueltype);
     formData.append("price", price);
-    formData.append("image", imageInput.current.files[0]);
-
+    if (imageInput?.current?.files[0]) {
+      formData.append("image", imageInput.current.files[0]);
+    }
     try {
-      const { data } = await axiosReq.post("/cars/", formData);
-      history.push(`/cars/${data.id}`);
+      await axiosReq.put(`/cars/${id}/`, formData);
+      history.push(`/cars/${id}`);
     } catch (err) {
       console.log(err);
       if (err.response?.status !== 401) {
@@ -270,7 +271,7 @@ function CarEditForm() {
         cancel
       </Button>
       <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        create
+        save
       </Button>
     </div>
   );
