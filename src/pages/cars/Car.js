@@ -1,11 +1,9 @@
 import React from "react";
-import {
-  Card,
-  ListGroup,
-  Media,
-} from "react-bootstrap";
+import { Card, ListGroup, Media } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Avatar from "../../components/Avatar";
+import { MoreDropdown } from "../../components/MoreDropdown";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import styles from "../../styles/Car.module.css";
 
@@ -30,6 +28,11 @@ const Car = (props) => {
 
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
+  const history = useHistory();
+
+  const handleEdit = () => {
+    history.push(`/posts/${id}/edit`);
+  };
 
   return (
     <Card className={styles.Car}>
@@ -61,7 +64,7 @@ const Car = (props) => {
           </Link>
           <div className="d-flex align-items-center">
             <span>Added: {updated_at}</span>
-            {is_owner && carPage && "..."}
+            {is_owner && carPage && <MoreDropdown handleEdit={handleEdit} />}
           </div>
         </Media>
       </Card.Body>
