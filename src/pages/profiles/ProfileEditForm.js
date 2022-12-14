@@ -27,10 +27,24 @@ const ProfileEditForm = () => {
 
   const [profileData, setProfileData] = useState({
     name: "",
-    content: "",
+    description: "",
+    street_address: "",
+    city: "",
+    postcode: "",
+    email: "",
+    phone: "",
     image: "",
   });
-  const { name, content, image } = profileData;
+  const {
+    name,
+    description,
+    street_address,
+    city,
+    postcode,
+    email,
+    phone,
+    image,
+  } = profileData;
 
   const [errors, setErrors] = useState({});
 
@@ -39,8 +53,26 @@ const ProfileEditForm = () => {
       if (currentUser?.profile_id?.toString() === id) {
         try {
           const { data } = await axiosReq.get(`/profiles/${id}/`);
-          const { name, content, image } = data;
-          setProfileData({ name, content, image });
+          const {
+            name,
+            description,
+            street_address,
+            city,
+            postcode,
+            email,
+            phone,
+            image,
+          } = data;
+          setProfileData({
+            name,
+            description,
+            street_address,
+            city,
+            postcode,
+            email,
+            phone,
+            image,
+          });
         } catch (err) {
           console.log(err);
           history.push("/");
@@ -64,7 +96,12 @@ const ProfileEditForm = () => {
     event.preventDefault();
     const formData = new FormData();
     formData.append("name", name);
-    formData.append("content", content);
+    formData.append("description", description);
+    formData.append("street_address", street_address);
+    formData.append("city", city);
+    formData.append("postcode", postcode);
+    formData.append("email", email);
+    formData.append("phone", phone);
 
     if (imageFile?.current?.files[0]) {
       formData.append("image", imageFile?.current?.files[0]);
@@ -86,13 +123,67 @@ const ProfileEditForm = () => {
   const textFields = (
     <>
       <Form.Group>
-        <Form.Label>Bio</Form.Label>
+        <Form.Label>Name</Form.Label>
+        <Form.Control
+          type="text"
+          name="name"
+          value={name}
+          onChange={handleChange}
+        />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>Description</Form.Label>
         <Form.Control
           as="textarea"
-          value={content}
+          value={description}
           onChange={handleChange}
-          name="content"
+          name="description"
           rows={7}
+        />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>City</Form.Label>
+        <Form.Control
+          type="text"
+          name="city"
+          value={city}
+          onChange={handleChange}
+        />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>Street address</Form.Label>
+        <Form.Control
+          type="text"
+          name="street_address"
+          value={street_address}
+          onChange={handleChange}
+        />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>Postcode</Form.Label>
+        <Form.Control
+          type="text"
+          name="postcode"
+          value={postcode}
+          onChange={handleChange}
+        />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>Email</Form.Label>
+        <Form.Control
+          type="email"
+          name="email"
+          value={email}
+          onChange={handleChange}
+        />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>Phone</Form.Label>
+        <Form.Control
+          type="text"
+          name="phone"
+          value={phone}
+          onChange={handleChange}
         />
       </Form.Group>
 
