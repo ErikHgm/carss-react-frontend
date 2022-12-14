@@ -11,7 +11,7 @@ import appStyles from "../../App.module.css";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
-import { Alert } from "bootstrap";
+import Alert from "react-bootstrap/Alert";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { useRedirect } from "../../hooks/useRedirect";
 

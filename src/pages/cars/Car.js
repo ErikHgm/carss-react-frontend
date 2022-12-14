@@ -1,5 +1,7 @@
 import React from "react";
-import { Card, ListGroup, Media } from "react-bootstrap";
+import Card from "react-bootstrap/Card";
+import ListGroup from "react-bootstrap/ListGroup";
+import Media from "react-bootstrap/Media";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { axiosRes } from "../../api/axiosDefaults";

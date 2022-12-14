@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Container, Form } from "react-bootstrap";
+import Form from "react-bootstrap/Form";
+import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
