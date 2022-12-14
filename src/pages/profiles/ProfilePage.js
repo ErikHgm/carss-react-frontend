@@ -91,6 +91,14 @@ const ProfilePage = () => {
     </>
   );
 
+  const mainProfilePosts = (
+    <>
+      <hr />
+      <p className="text-center">Profile owner's posts</p>
+      <hr />
+    </>
+  );
+  
   return <div>ProfilePage</div>;
 };
 
