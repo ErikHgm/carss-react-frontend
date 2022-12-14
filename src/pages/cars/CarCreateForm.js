@@ -14,8 +14,11 @@ import Asset from "../../components/Asset";
 import { useRef, useState } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
+import { useRedirect } from "../../hooks/useRedirect";
 
 function CarCreateForm() {
+  useRedirect("loggedOut");
+
   const [errors, setErrors] = useState({});
 
   const [carData, setCarData] = useState({
