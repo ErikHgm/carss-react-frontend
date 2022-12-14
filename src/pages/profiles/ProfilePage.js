@@ -5,6 +5,7 @@ import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
 import styles from "../../styles/ProfilePage.module.css";
 import btnStyles from "../../styles/Button.module.css";
+import Asset from "../../components/Asset";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
@@ -12,6 +13,11 @@ import {
   useProfileData,
   useSetProfileData,
 } from "../../contexts/ProfileDataContext";
+import PopularProfiles from "./PopularProfiles";
+import InfiniteScroll from "react-infinite-scroll-component";
+import Car from "../cars/Car";
+import { fetchMoreData } from "../../utils/utils";
+import NoResults from "../../assets/no-results.png";
 
 const ProfilePage = () => {
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -21,17 +27,21 @@ const ProfilePage = () => {
   const { pageProfile } = useProfileData();
   const [profile] = pageProfile.results;
   const is_owner = currentUser?.username === profile?.owner;
+  const [profileCars, setProfileCars] = useState({ results: [] });
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [{ data: pageProfile }] = await Promise.all([
-          axiosReq.get(`/profiles/${id}/`),
-        ]);
+        const [{ data: pageProfile }, { data: profileCars }] =
+          await Promise.all([
+            axiosReq.get(`/profiles/${id}/`),
+            axiosReq.get(`/cars/?owner__profile=${id}`),
+          ]);
         setProfileData((prevState) => ({
           ...prevState,
           pageProfile: { results: [pageProfile] },
         }));
+        setProfileCars(profileCars);
         setHasLoaded(true);
       } catch (err) {
         console.log(err);
@@ -54,7 +64,7 @@ const ProfilePage = () => {
           <h3 className="m-2">{profile?.owner}</h3>
           <Row className="justify-content-center no-gutters">
             <Col xs={3} className="my-2">
-              <div>{profile?.posts_count}</div>
+              <div>{profile?.cars_count}</div>
               <div>posts</div>
             </Col>
             <Col xs={3} className="my-2">
@@ -94,11 +104,29 @@ const ProfilePage = () => {
   const mainProfilePosts = (
     <>
       <hr />
-      <p className="text-center">Profile owner's posts</p>
+      <p className="text-center">
+        Cars currently for sale by {profile?.owner}:
+      </p>
       <hr />
+      {profileCars.results.length ? (
+        <InfiniteScroll
+          children={profileCars.results.map((car) => (
+            <Car key={car.id} {...car} setCars={setProfileCars} />
+          ))}
+          dataLength={profileCars.results.length}
+          loader={<Asset spinner />}
+          hasMore={!!profileCars.next}
+          next={() => fetchMoreData(profileCars, setProfileCars)}
+        />
+      ) : (
+        <Asset
+          src={NoResults}
+          message={`No results found, ${profile?.owner} hasn't posted yet.`}
+        />
+      )}
     </>
   );
-  
+
   return <div>ProfilePage</div>;
 };
 
