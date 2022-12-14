@@ -3,8 +3,10 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Image from "react-bootstrap/Image";
 import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
 import styles from "../../styles/ProfilePage.module.css";
 import btnStyles from "../../styles/Button.module.css";
+import appStyles from "../../App.module.css";
 import Asset from "../../components/Asset";
 import { useParams } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
@@ -127,7 +129,26 @@ const ProfilePage = () => {
     </>
   );
 
-  return <div>ProfilePage</div>;
+  return (
+    <Row>
+      <Col className="py-2 p-0 p-lg-2" lg={8}>
+        <PopularProfiles mobile />
+        <Container className={appStyles.Content}>
+          {hasLoaded ? (
+            <>
+              {mainProfile}
+              {mainProfilePosts}
+            </>
+          ) : (
+            <Asset spinner />
+          )}
+        </Container>
+      </Col>
+      <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
+        <PopularProfiles />
+      </Col>
+    </Row>
+  );
 };
 
 export default ProfilePage;
