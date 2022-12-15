@@ -50,19 +50,19 @@ const CarList = (props) => {
 
             <Row>
               <Col className="d-flex justify-content-between">
-                <div className="font-weight-bold">
+                <div>
                   <i className="fa-solid fa-calendar-days"></i>
                   {year}
                 </div>
-                <div className="font-weight-bold">
+                <div>
                   <i className="fa-solid fa-road"></i>
                   {mileage}
                 </div>
-                <div className="font-weight-bold text-capitalize">
+                <div className="text-capitalize">
                   <i className="fa-solid fa-gears"></i>
                   {gearbox}
                 </div>
-                <div className="font-weight-bold text-capitalize">
+                <div className="text-capitalize">
                   <i className="fa-solid fa-gas-pump"></i>
                   {fueltype}
                 </div>
