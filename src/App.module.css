@@ -32,8 +32,12 @@
 }
 
 a {
-  color: #fff;
+  color: #333;
   transition: color ease-in-out 0.3s;
+}
+
+nav a {
+  color: #fff;
 }
 
 a:hover {
@@ -50,10 +54,14 @@ input[type="file"] {
 }
 
 i {
-  color: #fff;
+  color: #333;
   font-size: 1.2rem;
   padding: 7px;
   vertical-align: middle;
+}
+
+nav i {
+  color: #fff;
 }
 
 i:hover {
