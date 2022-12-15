@@ -94,6 +94,9 @@ const NavBar = () => {
         <NavLink to="/">
           <Navbar.Brand>
             <img src={logo} alt="logo" height="45" />
+            <div className={styles.Slogan}>
+              <span>Welcome to CARSS marketplace</span>
+            </div>
           </Navbar.Brand>
         </NavLink>
         {currentUser && sellCarIcon}

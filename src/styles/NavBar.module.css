@@ -10,3 +10,10 @@
 .Active i {
   color: rgb(148, 203, 236);
 }
+.Slogan {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-style: italic;
+  color:#fff;
+  padding: 0 10px;
+}
