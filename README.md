@@ -54,7 +54,10 @@ Introduction
 
 ## Technologies Used
 
-### Languages Used
+### Languages
+   - JavaScript
+   - HTML5
+   - CSS3
 
 ### Frameworks, Libraries & Programs Used
 
