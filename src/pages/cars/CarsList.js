@@ -6,7 +6,7 @@ import Row from "react-bootstrap/Row";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
 import Asset from "../../components/Asset";
-import Car from "./Car";
+import CarList from "./CarList";
 import NoResults from "../../assets/no-results.png";
 import appStyles from "../../App.module.css";
 import styles from "../../styles/CarsList.module.css";
@@ -65,7 +65,7 @@ function CarsList({ message, filter = "" }) {
             {cars.results.length ? (
               <InfiniteScroll
                 children={cars.results.map((car) => (
-                  <Car key={car.id} {...car} setCars={setCars} />
+                  <CarList key={car.id} {...car} setCars={setCars} />
                 ))}
                 dataLength={cars.results.length}
                 loader={<Asset spinner />}
