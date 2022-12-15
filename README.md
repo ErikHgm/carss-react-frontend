@@ -1,9 +1,17 @@
 <h1 align="center">CARSS - A vehicle marketplace!</h1>
-<h2 align="center"><img src="static/img/readme/main.png"></h2>
+<h2 align="center"><img src="docs/assets/features/main.png"></h2>
 
-Introduction
+CARSS is a vehicle marketplace platform designed for used cars. It allows for the users to create their own listing to sell their used car. As a visitor you can also search for used cars in case you are looking to buy a car. The users can register for the website and gain access to more features such as saving your favourite cars that you are most interested in as well as follow certain car dealerships on order to be aware of what their latest inventory are. 
 
+This part of the project is the frontend part based on the React framework, it consist of the user interface that connects and interact with the backend API through http requests.
+         
 [View the live project here.](https://carss-react.herokuapp.com/)
+
+### Links to the Backend API Project
+
+- [Frontend - Repository](https://github.com/ErikHgm/carss-drf-backend)
+- [Frontend - Deployment](https://carss-drf-backend.herokuapp.com/)
+
 
 ## TOC
 
