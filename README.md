@@ -55,11 +55,28 @@ Introduction
 ## Technologies Used
 
 ### Languages
-   - JavaScript
-   - HTML5
-   - CSS3
+
+- JavaScript
+- HTML5
+- CSS3
 
 ### Frameworks, Libraries & Programs Used
+
+- [React](https://reactjs.org/) - (Front-end JavaScript library for building user interfaces based on UI components)
+
+- [React Bootstrap](https://react-bootstrap.github.io/) - Component-based library that provides native Bootstrap components as pure React components[1](https://www.pluralsight.com/guides/how-to-set-up-a-react-bootstrap-app). Used to create a responsive application/component UI.
+- [Axios](https://axios-http.com/) - Promise based HTTP client for the browser and node.js. Used to make HTTP requests from throughout the application.
+- [jwt-decode](https://github.com/auth0/jwt-decode) - Used to decode and extract information from a JWT token.
+- [react-router-dom](https://www.npmjs.com/package/react-router-dom) - Routing library for the React Javascript library. Used to display different components based on the URL entered in the browser.
+
+- [drawSQL](https://drawsql.app/) - Create Database Schema/ERD
+- [Git](https://git-scm.com/) - Git was used for version control, using the terminal to commit to Git and
+  Push to GitHub.
+- [GitHub:](https://github.com/) - GitHub is used to store the projects code after being pushed from Git.
+- The following modules were installed or enabled in Gitpod to assist with formatting and code
+  linting:
+  - [ESLint](https://eslint.org/) - Code Linter.
+  - [Prettier](https://prettier.io/) - Code Formatting.
 
 ## Testing
 
@@ -132,6 +149,7 @@ In the Deploy tab:
 ### Media
 
 ### Acknowledgements
-  - The tutor support team at Code Institute for their support.
-  - My Code Institute Mentor for feedback and suggestions.
-  - The Code Institute Slack community.
+
+- The tutor support team at Code Institute for their support.
+- My Code Institute Mentor for feedback and suggestions.
+- The Code Institute Slack community.
