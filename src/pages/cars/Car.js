@@ -1,6 +1,7 @@
 import React from "react";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
-import ListGroup from "react-bootstrap/ListGroup";
 import Media from "react-bootstrap/Media";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
@@ -55,22 +56,92 @@ const Car = (props) => {
       </Card.Body>
 
       <Card.Body>
-        <ListGroup className="text-left">
-          <ListGroup.Item>{brand}</ListGroup.Item>
-          <ListGroup.Item>{mileage}</ListGroup.Item>
-          <ListGroup.Item>{year}</ListGroup.Item>
-          <ListGroup.Item>{gearbox}</ListGroup.Item>
-          <ListGroup.Item>{fueltype}</ListGroup.Item>
-          <ListGroup.Item>{price}</ListGroup.Item>
-        </ListGroup>
+        <Row className="mb-2 text-left">
+          <Col>
+            <Row>
+              <Col className="d-inline-block" xs={3}>
+                <i className="fa-solid fa-bookmark"></i>
+              </Col>
+              <Col className="d-inline-block" xs={9}>
+                <span className="d-block text-muted">Brand</span>
+                <span className="font-weight-bold text-capitalize">
+                  {brand}
+                </span>
+              </Col>
+            </Row>
+          </Col>
+          <Col>
+            <Row>
+              <Col className="d-inline-block" xs={3}>
+                <i className="fa-solid fa-road"></i>
+              </Col>
+              <Col className="d-inline-block" xs={9}>
+                <span className="d-block text-muted">Mileage</span>
+                <span className="font-weight-bold">{mileage}</span>
+              </Col>
+            </Row>
+          </Col>
+
+          <Col>
+            <Row>
+              <Col className="d-inline-block" xs={3}>
+                <i className="fa-solid fa-calendar-days"></i>
+              </Col>
+              <Col className="d-inline-block" xs={9}>
+                <span className="d-block text-muted">Year</span>
+                <span className="font-weight-bold">{year}</span>
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+        <Row className="mb-5 text-left">
+          <Col>
+            <Row>
+              <Col className="d-inline-block" xs={3}>
+                <i className="fa-solid fa-gears"></i>
+              </Col>
+              <Col className="d-inline-block" xs={9}>
+                <span className="d-block text-muted">Gearbox</span>
+                <span className="font-weight-bold text-capitalize">
+                  {gearbox}
+                </span>
+              </Col>
+            </Row>
+          </Col>
+          <Col>
+            <Row>
+              <Col className="d-inline-block" xs={3}>
+                <i class="fa-solid fa-gas-pump"></i>
+              </Col>
+              <Col className="d-inline-block" xs={9}>
+                <span className="d-block text-muted">Fueltype</span>
+                <span className="font-weight-bold text-capitalize">
+                  {fueltype}
+                </span>
+              </Col>
+            </Row>
+          </Col>
+          <Col>
+            <Row>
+              <Col className="d-inline-block" xs={3}>
+                <i className="fa-solid fa-money-bill-1-wave"></i>
+              </Col>
+              <Col className="d-inline-block" xs={9}>
+                <span className="d-block text-muted">Price</span>
+                <span className="font-weight-bold">{price}</span>
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+
         {title && <Card.Title className="text-left">{title}</Card.Title>}
         {description && (
-          <Card.Text className="text-left">{description}</Card.Text>
+          <Card.Text className="text-left mb-5">{description}</Card.Text>
         )}
 
-        <Media className="align-items-center justify-content-between">
+        <Media className="align-items-center justify-content-around">
+          <span>Sold by:</span>
           <Link to={`/profiles/${profile_id}`}>
-            <span>Sold by:</span>
             <Avatar src={profile_image} height={55} />
             {owner}
           </Link>

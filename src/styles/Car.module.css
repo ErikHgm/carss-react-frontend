@@ -22,3 +22,14 @@ h5 {
 .HeartOutline:hover {
   color: #f85032;
 }
+
+.car i {
+  color: #333;
+  font-size: 2rem;
+  padding: 7px;
+  vertical-align: middle;
+}
+
+i:hover {
+  color: #333;
+}
