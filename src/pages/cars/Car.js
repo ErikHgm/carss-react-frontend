@@ -116,7 +116,6 @@ const Car = (props) => {
             <i className="far fa-heart" />
           </OverlayTrigger>
         )}
-        {saved_count}
       </div>
 
       <Card.Body>
