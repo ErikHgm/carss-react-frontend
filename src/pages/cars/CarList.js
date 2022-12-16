@@ -5,12 +5,15 @@ import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import styles from "../../styles/Car.module.css";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
+import { axiosRes } from "../../api/axiosDefaults";
 
 const CarList = (props) => {
   const {
     id,
     owner,
     profile_id,
+    save_id,
     title,
     mileage,
     year,
@@ -19,11 +22,39 @@ const CarList = (props) => {
     price,
     image,
     updated_at,
+    setCars,
   } = props;
 
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
 
+  const handleSave = async () => {
+    try {
+      const { data } = await axiosRes.post("/saved/", { car: id });
+      setCars((setCars) => ({
+        ...setCars,
+        results: setCars.results.map((car) => {
+          return car.id === id ? { ...car, save_id: data.id } : car;
+        }),
+      }));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleUnsave = async () => {
+    try {
+      await axiosRes.delete(`/saved/${save_id}/`);
+      setCars((setCars) => ({
+        ...setCars,
+        results: setCars.results.map((car) => {
+          return car.id === id ? { ...car, save_id: null } : car;
+        }),
+      }));
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <Card className={styles.Car}>
       <Card.Body>
@@ -36,6 +67,31 @@ const CarList = (props) => {
 
           <Col xs={7}>
             <Row>
+              <div className={styles.PostBar}>
+                {is_owner ? (
+                  <OverlayTrigger
+                    placement="top"
+                    overlay={<Tooltip>You can't save your own car!</Tooltip>}
+                  >
+                    <i className="far fa-heart" />
+                  </OverlayTrigger>
+                ) : save_id ? (
+                  <span onClick={handleUnsave}>
+                    <i className={`fas fa-heart ${styles.Heart}`} />
+                  </span>
+                ) : currentUser ? (
+                  <span onClick={handleSave}>
+                    <i className={`far fa-heart ${styles.HeartOutline}`} />
+                  </span>
+                ) : (
+                  <OverlayTrigger
+                    placement="top"
+                    overlay={<Tooltip>Log in to save car!</Tooltip>}
+                  >
+                    <i className="far fa-heart" />
+                  </OverlayTrigger>
+                )}
+              </div>
               <Col className="text-right">
                 <span>{updated_at}</span>
               </Col>
