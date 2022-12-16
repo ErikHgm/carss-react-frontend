@@ -20,7 +20,6 @@ const Car = (props) => {
     profile_id,
     profile_image,
     save_id,
-    saved_count,
     title,
     brand,
     description,
@@ -45,9 +44,7 @@ const Car = (props) => {
       setCars((setCars) => ({
         ...setCars,
         results: setCars.results.map((car) => {
-          return car.id === id
-            ? { ...car, saved_count: car.saved_count + 1, save_id: data.id }
-            : car;
+          return car.id === id ? { ...car, save_id: data.id } : car;
         }),
       }));
     } catch (err) {
@@ -61,9 +58,7 @@ const Car = (props) => {
       setCars((setCars) => ({
         ...setCars,
         results: setCars.results.map((car) => {
-          return car.id === id
-            ? { ...car, saved_count: car.saved_count - 1, save_id: null }
-            : car;
+          return car.id === id ? { ...car, save_id: null } : car;
         }),
       }));
     } catch (err) {
