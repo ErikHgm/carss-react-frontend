@@ -3,6 +3,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Media from "react-bootstrap/Media";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { axiosRes } from "../../api/axiosDefaults";
@@ -37,7 +39,7 @@ const Car = (props) => {
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
 
-  const handleLike = async () => {
+  const handleSave = async () => {
     try {
       const { data } = await axiosRes.post("/saved/", { car: id });
       setCars((setCars) => ({
@@ -53,7 +55,7 @@ const Car = (props) => {
     }
   };
 
-  const handleUnlike = async () => {
+  const handleUnsave = async () => {
     try {
       await axiosRes.delete(`/saved/${save_id}/`);
       setCars((setCars) => ({
@@ -68,7 +70,6 @@ const Car = (props) => {
       console.log(err);
     }
   };
-
 
   const handleEdit = () => {
     history.push(`/cars/${id}/edit`);
@@ -90,6 +91,33 @@ const Car = (props) => {
           <Card.Img src={image} alt={title} />
         </Link>
       </Card.Body>
+
+      <div className={styles.PostBar}>
+        {is_owner ? (
+          <OverlayTrigger
+            placement="top"
+            overlay={<Tooltip>You can't save your own car!</Tooltip>}
+          >
+            <i className="far fa-heart" />
+          </OverlayTrigger>
+        ) : save_id ? (
+          <span onClick={handleUnsave}>
+            <i className={`fas fa-heart ${styles.Heart}`} />
+          </span>
+        ) : currentUser ? (
+          <span onClick={handleSave}>
+            <i className={`far fa-heart ${styles.HeartOutline}`} />
+          </span>
+        ) : (
+          <OverlayTrigger
+            placement="top"
+            overlay={<Tooltip>Log in to save car!</Tooltip>}
+          >
+            <i className="far fa-heart" />
+          </OverlayTrigger>
+        )}
+        {saved_count}
+      </div>
 
       <Card.Body>
         <Row className="mb-2 text-left">
