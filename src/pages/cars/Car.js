@@ -17,6 +17,8 @@ const Car = (props) => {
     owner,
     profile_id,
     profile_image,
+    save_id,
+    saved_count,
     title,
     brand,
     description,
@@ -28,11 +30,28 @@ const Car = (props) => {
     image,
     updated_at,
     carPage,
+    setCars,
   } = props;
 
   const currentUser = useCurrentUser();
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
+
+  const handleLike = async () => {
+    try {
+      const { data } = await axiosRes.post("/saved/", { car: id });
+      setCars((setCars) => ({
+        ...setCars,
+        results: setCars.results.map((car) => {
+          return car.id === id
+            ? { ...car, saved_count: car.saved_count + 1, save_id: data.id }
+            : car;
+        }),
+      }));
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const handleEdit = () => {
     history.push(`/cars/${id}/edit`);
