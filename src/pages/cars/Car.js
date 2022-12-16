@@ -53,6 +53,23 @@ const Car = (props) => {
     }
   };
 
+  const handleUnlike = async () => {
+    try {
+      await axiosRes.delete(`/saved/${save_id}/`);
+      setCars((setCars) => ({
+        ...setCars,
+        results: setCars.results.map((car) => {
+          return car.id === id
+            ? { ...car, saved_count: car.saved_count - 1, save_id: null }
+            : car;
+        }),
+      }));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+
   const handleEdit = () => {
     history.push(`/cars/${id}/edit`);
   };
