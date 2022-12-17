@@ -58,6 +58,21 @@ This part of the project is the frontend part based on the React framework, it c
 
 ## Features
 
+### Navbar & Search
+- The navbar and searchbar 
+
+![Navbar](/docs/assets/features/nav_searchbar.png)  
+
+### Cars List page
+- The Cars List page 
+
+![CarsList](/docs/assets/features/carlist_page.png)  
+
+### Car Detail page
+- The Car Detail page 
+
+![Navbar](/docs/assets/features/cardetail_page.png)  
+
 ### Future Features
 
 ## Technologies Used
