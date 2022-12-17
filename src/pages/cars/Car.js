@@ -114,7 +114,7 @@ const Car = (props) => {
       </div>
 
       <Card.Body>
-        <Row className="mb-2 text-left">
+        <Row className="mb-2 text-left no-gutters">
           <Col>
             <Row>
               <Col className="d-inline-block" xs={3}>
@@ -152,7 +152,7 @@ const Car = (props) => {
             </Row>
           </Col>
         </Row>
-        <Row className="mb-5 text-left">
+        <Row className="mb-5 text-left no-gutters">
           <Col>
             <Row>
               <Col className="d-inline-block" xs={3}>
