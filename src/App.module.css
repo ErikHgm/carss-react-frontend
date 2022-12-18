@@ -55,7 +55,7 @@ input[type="file"] {
 
 i {
   color: #333;
-  font-size: 1.2rem;
+  font-size: 1rem;
   padding: 7px;
   vertical-align: middle;
 }
@@ -87,4 +87,18 @@ figure {
 }
 *::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+@media only screen and (max-width: 500px) {
+  body {
+    font-size: 0.6rem;
+  }
+  i {
+    font-size: 0.7rem;
+    padding: 3px;
+  }
+
+  .Main {
+    padding-top: 110px;
+  }
 }
