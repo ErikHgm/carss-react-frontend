@@ -48,7 +48,7 @@ const Car = (props) => {
         }),
       }));
     } catch (err) {
-      console.log(err);
+      //console.log(err);
     }
   };
 
@@ -62,7 +62,7 @@ const Car = (props) => {
         }),
       }));
     } catch (err) {
-      console.log(err);
+      //console.log(err);
     }
   };
 
@@ -75,7 +75,7 @@ const Car = (props) => {
       await axiosRes.delete(`/cars/${id}/`);
       history.goBack();
     } catch (err) {
-      console.log(err);
+      //console.log(err);
     }
   };
 
