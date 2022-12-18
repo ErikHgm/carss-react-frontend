@@ -69,7 +69,7 @@ const ProfilePage = () => {
           <Row className="justify-content-center no-gutters">
             <Col xs={3} className="my-2">
               <div>{profile?.cars_count}</div>
-              <div>posts</div>
+              <div>cars</div>
             </Col>
             <Col xs={3} className="my-2">
               <div>{profile?.followers_count}</div>
@@ -100,7 +100,26 @@ const ProfilePage = () => {
               </Button>
             ))}
         </Col>
-        {profile?.content && <Col className="p-3">{profile.content}</Col>}
+        <Row className="justify-content-center">
+          <Col>
+            {profile?.name && (
+              <Row className="text-left p-3">{profile.name}</Row>
+            )}
+            {profile?.description && (
+              <Row className="text-left p-3">{profile.description}</Row>
+            )}
+            <Col>
+              <p className="font-weight-bold">Contact us!</p>
+              {profile?.city && <p>City: {profile.city}</p>}
+              {profile?.postcode && <p>Postcode: {profile.postcode}</p>}
+              {profile?.street_address && (
+                <p>Street: {profile.street_address}</p>
+              )}
+              {profile?.email && <p>Email: {profile.email}</p>}
+              {profile?.phone && <p>Phone: {profile.phone}</p>}
+            </Col>
+          </Col>
+        </Row>
       </Row>
     </>
   );
