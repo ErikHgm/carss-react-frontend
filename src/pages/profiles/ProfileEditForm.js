@@ -35,6 +35,7 @@ const ProfileEditForm = () => {
     phone: "",
     image: "",
   });
+
   const {
     name,
     description,
@@ -131,6 +132,11 @@ const ProfileEditForm = () => {
           onChange={handleChange}
         />
       </Form.Group>
+      {errors?.name?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
       <Form.Group>
         <Form.Label>Description</Form.Label>
         <Form.Control
@@ -141,6 +147,11 @@ const ProfileEditForm = () => {
           rows={7}
         />
       </Form.Group>
+      {errors?.description?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
       <Form.Group>
         <Form.Label>City</Form.Label>
         <Form.Control
@@ -150,6 +161,11 @@ const ProfileEditForm = () => {
           onChange={handleChange}
         />
       </Form.Group>
+      {errors?.city?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
       <Form.Group>
         <Form.Label>Street address</Form.Label>
         <Form.Control
@@ -159,6 +175,11 @@ const ProfileEditForm = () => {
           onChange={handleChange}
         />
       </Form.Group>
+      {errors?.street_address?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
       <Form.Group>
         <Form.Label>Postcode</Form.Label>
         <Form.Control
@@ -168,6 +189,11 @@ const ProfileEditForm = () => {
           onChange={handleChange}
         />
       </Form.Group>
+      {errors?.postcode?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
       <Form.Group>
         <Form.Label>Email</Form.Label>
         <Form.Control
@@ -177,6 +203,11 @@ const ProfileEditForm = () => {
           onChange={handleChange}
         />
       </Form.Group>
+      {errors?.email?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
       <Form.Group>
         <Form.Label>Phone</Form.Label>
         <Form.Control
@@ -186,12 +217,12 @@ const ProfileEditForm = () => {
           onChange={handleChange}
         />
       </Form.Group>
-
-      {errors?.content?.map((message, idx) => (
+      {errors?.phone?.map((message, idx) => (
         <Alert variant="warning" key={idx}>
           {message}
         </Alert>
       ))}
+
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
         onClick={() => history.goBack()}
