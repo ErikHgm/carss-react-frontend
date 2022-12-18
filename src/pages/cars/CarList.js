@@ -98,9 +98,11 @@ const CarList = (props) => {
             </Row>
             <Row>
               <Col>
-                {title && (
-                  <Card.Title className="text-left">{title}</Card.Title>
-                )}
+                <Link to={`/cars/${id}`}>
+                  {title && (
+                    <Card.Title className="text-left">{title}</Card.Title>
+                  )}
+                </Link>
               </Col>
             </Row>
 
