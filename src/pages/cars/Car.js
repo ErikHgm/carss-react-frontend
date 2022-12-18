@@ -186,7 +186,7 @@ const Car = (props) => {
               </Col>
               <Col className="d-inline-block" xs={9}>
                 <span className="d-block text-muted">Price</span>
-                <span className="font-weight-bold">{price}</span>
+                <span className="font-weight-bold">{price}€</span>
               </Col>
             </Row>
           </Col>

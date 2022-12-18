@@ -102,14 +102,12 @@ const ProfilePage = () => {
         </Col>
         <Row className="justify-content-center">
           <Col>
-            {profile?.name && (
-              <Row className="text-left p-3">{profile.name}</Row>
-            )}
             {profile?.description && (
               <Row className="text-left p-3">{profile.description}</Row>
             )}
             <Col>
               <p className="font-weight-bold">Contact us!</p>
+              {profile?.name && <p>Company: {profile.name}</p>}
               {profile?.city && <p>City: {profile.city}</p>}
               {profile?.postcode && <p>Postcode: {profile.postcode}</p>}
               {profile?.street_address && (
