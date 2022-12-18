@@ -97,7 +97,7 @@ const NavBar = () => {
           <Navbar.Brand>
             <img src={logo} alt="logo" height="45" />
             <div className={styles.Slogan}>
-              <span>Welcome to CARSS marketplace</span>
+              <span>Welcome to CARSS</span>
             </div>
           </Navbar.Brand>
         </NavLink>
