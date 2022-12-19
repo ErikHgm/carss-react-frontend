@@ -52,49 +52,53 @@ This part of the project is the frontend part based on the React framework, it c
 
 ### Navbar & Search
 
-- The navbar and searchbar
+- Contains the necessary links for navigation throughout the site.
+- Updates links based on user state.
+- The searchbar makes it possible search among the various listings.
 
 ![Navbar](/docs/assets/features/nav_searchbar.png)
 
 ### Cars List page
 
-- The Cars List page
+- Shows all the cars listings.
+- Provides the vital information about each car.
 
 ![CarsList](/docs/assets/features/carlist_page.png)
 
 ### Car Detail page
 
-- The Car Detail page
+- Contains more detailed information about the car.
+- Includes links for the post owner to update or delete the post.
 
 ![CarDetail](/docs/assets/features/cardetail_page.png)
 
 ## Car Edit page
 
-- The Car edit page
+- Provides capability to update an existing car post.
 
 ![Caredit](/docs/assets/features/caredit_page.png)
 
 ## Profile page
 
-- The profile page
+- The profile page give the seller an opportunity to present their company to the users.
 
 ![ProfilePage](/docs/assets/features/profile_page.png)
 
 ## Edit Profile
 
-- Edit profile
+- Edit profile makes it possible to update the existing information about a seller.
 
 ![ProfilePage](/docs/assets/features/edit_profile_page.png)
 
 ## Feed page
 
-- The Feed page
+- On the Feed page all the cars that are on sale by the sellers that the user is following are presented.
 
 ![Navbar](/docs/assets/features/feed_page.png)
 
 ## Saved page
 
-- The saved page
+- The saved page shows all the cars the user has saved.
 
 ![Navbar](/docs/assets/features/saved_page.png)
 
@@ -104,6 +108,7 @@ This part of the project is the frontend part based on the React framework, it c
 - Implement a rating system for the buyers to rate sellers in order to increase trust and credibility of the service.
 - Implement a location algorithm to allow user to search for cars/sellers within a certain distance.
 - Implement the functionality for an image gallery to allow the sellers to upload more pictures of the cars.
+- Implement different roles during registration based on if the user is a company or private person.
 
 ## Technologies Used
 
