@@ -66,8 +66,8 @@ const CarList = (props) => {
           </Col>
 
           <Col xs={7}>
-            <Row>
-              <div className={styles.PostBar}>
+            <Row className="text-right">
+              <Col className={styles.PostBar}>
                 {is_owner ? (
                   <OverlayTrigger
                     placement="top"
@@ -91,8 +91,7 @@ const CarList = (props) => {
                     <i className="far fa-heart" />
                   </OverlayTrigger>
                 )}
-              </div>
-              <Col className="text-right">
+
                 <span>{updated_at}</span>
               </Col>
             </Row>
