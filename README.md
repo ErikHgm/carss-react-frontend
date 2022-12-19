@@ -9,8 +9,8 @@ This part of the project is the frontend part based on the React framework, it c
 
 ### Links to the Backend API Project
 
-- [Frontend - Repository](https://github.com/ErikHgm/carss-drf-backend)
-- [Frontend - Deployment](https://carss-drf-backend.herokuapp.com/)
+- [Backend - Repository](https://github.com/ErikHgm/carss-drf-backend)
+- [Backend - Deployment](https://carss-drf-backend.herokuapp.com/)
 
 
 ## TOC

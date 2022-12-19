@@ -23,12 +23,12 @@ function CarCreateForm() {
 
   const [carData, setCarData] = useState({
     title: "",
-    brand: "",
+    brand: "BMW",
     description: "",
     mileage: "",
     year: "",
-    gearbox: "",
-    fueltype: "",
+    gearbox: "Automatic",
+    fueltype: "Petrol",
     price: "",
     image: "",
   });
@@ -153,7 +153,6 @@ function CarCreateForm() {
         <Form.Control
           type="number"
           min="0"
-          step="100.00"
           name="mileage"
           value={mileage}
           onChange={handleChange}
