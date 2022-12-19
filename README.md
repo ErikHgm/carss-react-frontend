@@ -1,5 +1,5 @@
 <h1 align="center">CARSS - A vehicle marketplace!</h1>
-<h2 align="center"><img src="docs/assets/features/main.png"></h2>
+<h2 align="center"><img src="docs/assets/features/hero.png"></h2>
 
 CARSS is a vehicle marketplace platform designed for used cars. It allows for the users to create their own listing to sell their used car. As a visitor you can also search for used cars in case you are looking to buy a car. The users can register for the website and gain access to more features such as saving your favourite cars that you are most interested in as well as follow certain car dealerships on order to be aware of what their latest inventory are. 
 
@@ -41,11 +41,6 @@ This part of the project is the frontend part based on the React framework, it c
 ## User Experience (UX)
 
 - ### User stories
-
-  - #### First Time Visitor Goals
-  - #### Returning Visitor Goals
-
-  - #### Frequent User Goals
 
 - ### Agile methodology
 
@@ -139,16 +134,6 @@ A separate document for testing can be found [here](/TESTING.md).
 #### Remaining Bugs
   - No known remaining bugs.
 
-### Testing User Stories from User Experience (UX) Section
-
-- #### First Time Visitor Goals
-
-- #### Returning Visitor Goals
-
-- #### Frequent User Goals
-
-### Further Testing
-
 ## Deployment
 
 ### Forking the GitHub Repository
@@ -196,8 +181,10 @@ In the Deploy tab:
 ## Credits
 
 ### Code
+- The Moments tutorial produced by Code institute is credited throughout this project as it was used to create the foundations on which I built upon to create my project.
+- [React documentation](https://reactjs.org/docs/getting-started.html) - Was used throughout development to gain a better understanding of Hooks.
+- [React Bootstrap documentation and examples](https://react-bootstrap.github.io/components/alerts) - Used as a reference when building responsive component layouts.
 
-### Content
 
 ### Media
 
