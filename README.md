@@ -19,8 +19,7 @@ This part of the project is the frontend part based on the React framework, it c
   - [User Stories](#user-stories)
   - [Agile Methodology](#agile-methodology)
   - [Design](#design)
-    - [Wireframes](#wireframes)
-    - [Database Schema](#database-schema)
+  - [Wireframes](#wireframes)
 - [Features](#features)
   - [Future Features](#future-features)
 - [Technologies Used](#technologies-used)
@@ -53,6 +52,7 @@ This part of the project is the frontend part based on the React framework, it c
 - ### Design
 
 - ### Wireframes
+  A separate document for wireframes can be found [here](/docs/assets/wireframes/WIREFRAMES.md).
 
 ## Features
 
