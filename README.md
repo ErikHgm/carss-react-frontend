@@ -129,12 +129,15 @@ This part of the project is the frontend part based on the React framework, it c
   - [Prettier](https://prettier.io/) - Code Formatting.
 
 ## Testing
+A separate document for testing can be found [here](/TESTING.md).
 
 ### Bugs
 
 #### Fixed Bugs
+  - [Click here](https://github.com/ErikHgm/carss-react-frontend/search?q=fix&type=commits) to view a list of fixed bugs that has been completed.
 
 #### Remaining Bugs
+  - No known remaining bugs.
 
 ### Testing User Stories from User Experience (UX) Section
 
