@@ -54,8 +54,6 @@ This part of the project is the frontend part based on the React framework, it c
 
 - ### Wireframes
 
-- ### Database Schema
-
 ## Features
 
 ### Navbar & Search
@@ -71,9 +69,38 @@ This part of the project is the frontend part based on the React framework, it c
 ### Car Detail page
 - The Car Detail page 
 
-![Navbar](/docs/assets/features/cardetail_page.png)  
+![CarDetail](/docs/assets/features/cardetail_page.png)  
+
+## Car Edit page
+- The Car edit page 
+
+![Caredit](/docs/assets/features/caredit_page.png)  
+
+## Profile page
+- The profile page 
+
+![ProfilePage](/docs/assets/features/profile_page.png)  
+
+## Edit Profile
+- Edit profile  
+
+![ProfilePage](/docs/assets/features/edit_profile_page.png)  
+
+## Feed page
+- The Feed page 
+
+![Navbar](/docs/assets/features/feed_page.png)  
+
+## Saved page
+- The saved page 
+
+![Navbar](/docs/assets/features/saved_page.png)  
 
 ### Future Features
+  - Allow for more search options and filters based on different criteria.
+  - Implement a rating system for the buyers to rate sellers in order to increase trust and credibility of the service.
+  - Implement a location algorithm to allow user to search for cars/sellers within a certain distance.
+  - Implement the functionality for an image gallery to allow the sellers to upload more pictures of the cars.
 
 ## Technologies Used
 
