@@ -1,17 +1,16 @@
 <h1 align="center">CARSS - A vehicle marketplace!</h1>
 <h2 align="center"><img src="docs/assets/features/hero.png"></h2>
 
-CARSS is a vehicle marketplace platform designed for used cars. It allows for the users to create their own listing to sell their used car. As a visitor you can also search for used cars in case you are looking to buy a car. The users can register for the website and gain access to more features such as saving your favourite cars that you are most interested in as well as follow certain car dealerships on order to be aware of what their latest inventory are. 
+CARSS is a vehicle marketplace platform designed for used cars. It allows for the users to create their own listing to sell their used car. As a visitor you can also search for used cars in case you are looking to buy a car. The users can register for the website and gain access to more features such as saving your favourite cars that you are most interested in as well as follow certain car dealerships on order to be aware of what their latest inventory are.
 
 This part of the project is the frontend part based on the React framework, it consist of the user interface that connects and interact with the backend API through http requests.
-         
+
 [View the live project here.](https://carss-react.herokuapp.com/)
 
 ### Links to the Backend API Project
 
 - [Backend - Repository](https://github.com/ErikHgm/carss-drf-backend)
 - [Backend - Deployment](https://carss-drf-backend.herokuapp.com/)
-
 
 ## TOC
 
@@ -52,50 +51,59 @@ This part of the project is the frontend part based on the React framework, it c
 ## Features
 
 ### Navbar & Search
-- The navbar and searchbar 
 
-![Navbar](/docs/assets/features/nav_searchbar.png)  
+- The navbar and searchbar
+
+![Navbar](/docs/assets/features/nav_searchbar.png)
 
 ### Cars List page
-- The Cars List page 
 
-![CarsList](/docs/assets/features/carlist_page.png)  
+- The Cars List page
+
+![CarsList](/docs/assets/features/carlist_page.png)
 
 ### Car Detail page
-- The Car Detail page 
 
-![CarDetail](/docs/assets/features/cardetail_page.png)  
+- The Car Detail page
+
+![CarDetail](/docs/assets/features/cardetail_page.png)
 
 ## Car Edit page
-- The Car edit page 
 
-![Caredit](/docs/assets/features/caredit_page.png)  
+- The Car edit page
+
+![Caredit](/docs/assets/features/caredit_page.png)
 
 ## Profile page
-- The profile page 
 
-![ProfilePage](/docs/assets/features/profile_page.png)  
+- The profile page
+
+![ProfilePage](/docs/assets/features/profile_page.png)
 
 ## Edit Profile
-- Edit profile  
 
-![ProfilePage](/docs/assets/features/edit_profile_page.png)  
+- Edit profile
+
+![ProfilePage](/docs/assets/features/edit_profile_page.png)
 
 ## Feed page
-- The Feed page 
 
-![Navbar](/docs/assets/features/feed_page.png)  
+- The Feed page
+
+![Navbar](/docs/assets/features/feed_page.png)
 
 ## Saved page
-- The saved page 
 
-![Navbar](/docs/assets/features/saved_page.png)  
+- The saved page
+
+![Navbar](/docs/assets/features/saved_page.png)
 
 ### Future Features
-  - Allow for more search options and filters based on different criteria.
-  - Implement a rating system for the buyers to rate sellers in order to increase trust and credibility of the service.
-  - Implement a location algorithm to allow user to search for cars/sellers within a certain distance.
-  - Implement the functionality for an image gallery to allow the sellers to upload more pictures of the cars.
+
+- Allow for more search options and filters based on different criteria.
+- Implement a rating system for the buyers to rate sellers in order to increase trust and credibility of the service.
+- Implement a location algorithm to allow user to search for cars/sellers within a certain distance.
+- Implement the functionality for an image gallery to allow the sellers to upload more pictures of the cars.
 
 ## Technologies Used
 
@@ -124,15 +132,18 @@ This part of the project is the frontend part based on the React framework, it c
   - [Prettier](https://prettier.io/) - Code Formatting.
 
 ## Testing
+
 A separate document for testing can be found [here](/TESTING.md).
 
 ### Bugs
 
 #### Fixed Bugs
-  - [Click here](https://github.com/ErikHgm/carss-react-frontend/search?q=fix&type=commits) to view a list of fixed bugs that has been completed.
+
+- [Click here](https://github.com/ErikHgm/carss-react-frontend/search?q=fix&type=commits) to view a list of fixed bugs that has been completed.
 
 #### Remaining Bugs
-  - No known remaining bugs.
+
+- No known remaining bugs.
 
 ## Deployment
 
@@ -180,13 +191,17 @@ In the Deploy tab:
 
 ## Credits
 
-### Code
-- The Moments tutorial produced by Code institute is credited throughout this project as it was used to create the foundations on which I built upon to create my project.
-- [React documentation](https://reactjs.org/docs/getting-started.html) - Was used throughout development to gain a better understanding of Hooks.
-- [React Bootstrap documentation and examples](https://react-bootstrap.github.io/components/alerts) - Used as a reference when building responsive component layouts.
+### Online Documentation
 
+- [React documentation](https://reactjs.org/docs/getting-started.html)
+- [React Bootstrap documentation and examples](https://react-bootstrap.github.io/)
+### Code
+
+- The Moments tutorial by Code institute was used to create the foundations on which I built upon to create the project.
 
 ### Media
+
+- The images used throughout the project are from https://www.autotrader.co.uk/
 
 ### Acknowledgements
 
