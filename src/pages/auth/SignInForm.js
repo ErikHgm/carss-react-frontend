@@ -15,6 +15,7 @@ import Alert from "react-bootstrap/Alert";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { useRedirect } from "../../hooks/useRedirect";
 import { setTokenTimestamp } from "../../utils/utils";
+import Logo from "../../assets/logo.png";
 
 function SignInForm() {
   const setCurrentUser = useSetCurrentUser();
@@ -110,7 +111,7 @@ function SignInForm() {
         md={6}
         className={`my-auto d-none d-md-block p-2 ${styles.SignInCol}`}
       >
-        <Image className={`${appStyles.FillerImage}`} />
+        <Image className={`${appStyles.FillerImage}`} src={Logo} />
       </Col>
     </Row>
   );

@@ -13,6 +13,7 @@ import Alert from "react-bootstrap/Alert";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { useRedirect } from "../../hooks/useRedirect";
+import Logo from "../../assets/logo.png";
 
 const SignUpForm = () => {
   useRedirect("loggedIn");
@@ -125,7 +126,7 @@ const SignUpForm = () => {
         md={6}
         className={`my-auto d-none d-md-block p-2 ${styles.SignUpCol}`}
       >
-        <Image className={`${appStyles.FillerImage}`} />
+        <Image className={`${appStyles.FillerImage}`} src={Logo} />
       </Col>
     </Row>
   );

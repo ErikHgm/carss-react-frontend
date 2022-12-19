@@ -1,5 +1,5 @@
 .App {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   background-color: #f8f8f8;
   min-height: 100vh;
 }
@@ -16,9 +16,10 @@
 }
 
 .FillerImage {
-  object-fit: cover;
+  object-fit: contain;
   height: 100%;
   width: 100%;
+  background-color: rgb(49, 49, 156);
 }
 
 .Image {
