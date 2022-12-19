@@ -23,12 +23,12 @@ function CarCreateForm() {
 
   const [carData, setCarData] = useState({
     title: "",
-    brand: "BMW",
+    brand: "bmw",
     description: "",
     mileage: "",
     year: "",
-    gearbox: "Automatic",
-    fueltype: "Petrol",
+    gearbox: "automatic",
+    fueltype: "petrol",
     price: "",
     image: "",
   });
