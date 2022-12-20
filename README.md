@@ -41,16 +41,21 @@ This part of the project is the frontend part based on the React framework, it c
 
 - ### User stories
 
+  - User stories can be viewed in the GitHub repository and each user story has been grouped into Epics which can be displayed on the project's [Kanban board](https://github.com/users/ErikHgm/projects/5/views/3?groupedBy%5BcolumnId%5D=Milestone&visibleFields=%5B%22Title%22%2C%22Milestone%22%5D). To see acceptance criterias and tasks one can open the issue and view each user stories criteria. All user stories can also be found [here](/USERSTORIES.md) in a separate file.
+
 - ### Agile methodology
-  - Throughout the development of this project, an Agile Methodology was employed where GitHub projects was used to create User Stories. 
-Issues for each User Story was created including acceptance criteria and tasks. All user stories where then grouped into Milestones that represents each Epic that it relates to, according to the MOSCOW prioritization technique. The project's Kanban board can be viewed [here](https://github.com/users/ErikHgm/projects/5).
+
+  - Throughout the development of this project, an Agile Methodology was employed where GitHub projects was used to create User Stories.
+    Issues for each User Story was created including acceptance criteria and tasks. All user stories where then grouped into Milestones that represents each Epic that it relates to, according to the MOSCOW prioritization technique. The project's Kanban board can be viewed [here](https://github.com/users/ErikHgm/projects/5/views/3?groupedBy%5BcolumnId%5D=Milestone&visibleFields=%5B%22Title%22%2C%22Milestone%22%5D).
 
 - ### Design
+
   - #### Color Scheme
+
     I decided to incorporate a minimalistic design approach for the site. This is in order to make the content and detailed information throughout the site to stand out better to the users.
 
     The main color used is rgb(49, 49, 156) that represents a calm and trustworthy color type, in order to build trust to the user.
-    
+
     ![Color](/docs/assets/features/color_scheme.png)
 
   - #### Typography
@@ -212,6 +217,7 @@ In the Deploy tab:
 
 - [React documentation](https://reactjs.org/docs/getting-started.html)
 - [React Bootstrap documentation and examples](https://react-bootstrap.github.io/)
+
 ### Code
 
 - The Moments tutorial by Code institute was used to create the foundations on which I built upon to create the project.
