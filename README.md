@@ -39,16 +39,23 @@ This part of the project is the frontend part based on the React framework, it c
 
 ## User Experience (UX)
 
-- ### User stories
+In creating this project, the goal was to build a marketplace for car sellers to get in touch with potential buyers who are interested in buying a car. Key criterias in achieving this goal were identified as below:
+  - Build a site that provides the functionality to create a car posting.
+  - Create functionality for users to search for cars.
+  - Registered users should be able to save cars for future viewing.
+  - Registered users should be able to follow sellers to stay up to date with their offerings.
+  - Sellers can update their information in a profile page to better advertise themselves to the customers.
+
+### User stories
 
   - User stories can be viewed in the GitHub repository and each user story has been grouped into Epics which can be displayed on the project's [Kanban board](https://github.com/users/ErikHgm/projects/5/views/3?groupedBy%5BcolumnId%5D=Milestone&visibleFields=%5B%22Title%22%2C%22Milestone%22%5D). To see acceptance criterias and tasks one can open the issue and view each user stories criteria. All user stories can also be found [here](/USERSTORIES.md) in a separate file.
 
-- ### Agile methodology
+### Agile methodology
 
   - Throughout the development of this project, an Agile Methodology was employed where GitHub projects was used to create User Stories.
     Issues for each User Story was created including acceptance criteria and tasks. All user stories where then grouped into Milestones that represents each Epic that it relates to, according to the MOSCOW prioritization technique. The project's Kanban board can be viewed [here](https://github.com/users/ErikHgm/projects/5/views/3?groupedBy%5BcolumnId%5D=Milestone&visibleFields=%5B%22Title%22%2C%22Milestone%22%5D).
 
-- ### Design
+### Design
 
   - #### Color Scheme
 
