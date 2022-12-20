@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
+/* Component for the mobile dropdown navigation to close when
+clicking outside the menu */
 const useClickOutsideToggle = () => {
   const [expanded, setExpanded] = useState(false);
   const ref = useRef(null);

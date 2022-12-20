@@ -22,6 +22,9 @@ import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/no-results.png";
 import { ProfileEditDropdown } from "../../components/MoreDropdown";
 
+/* Component that shows all the informtaion about a profile owner. 
+Includes the functionality for showing all cars sold by the user
+and follower/following stats. */
 const ProfilePage = () => {
   const [hasLoaded, setHasLoaded] = useState(false);
   const currentUser = useCurrentUser();

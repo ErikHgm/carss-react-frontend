@@ -5,7 +5,7 @@ import Asset from "../../components/Asset";
 import Profile from "./Profile";
 import { useProfileData } from "../../contexts/ProfileDataContext";
 
-
+// Creates the sidebar with the top sellers
 const PopularProfiles = ({ mobile }) => {
   const { popularProfiles } = useProfileData();
 

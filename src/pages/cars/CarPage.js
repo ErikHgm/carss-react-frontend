@@ -6,6 +6,8 @@ import { axiosReq } from "../../api/axiosDefaults";
 import PopularProfiles from "../profiles/PopularProfiles";
 import Car from "./Car";
 
+// Component used to create the complete carpage
+// Imports the Car and Popularprofiles component
 function CarPage() {
   const { id } = useParams();
   const [car, setCar] = useState({ results: [] });

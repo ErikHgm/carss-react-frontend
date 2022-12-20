@@ -18,6 +18,8 @@ import {
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
+/* Component that includes the form for creating/updating
+the user profile. Includes error handling for input fields*/
 const ProfileEditForm = () => {
   const currentUser = useCurrentUser();
   const setCurrentUser = useSetCurrentUser();

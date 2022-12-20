@@ -15,6 +15,7 @@ import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
+// Imports the Car component to genereate the list of cars for sale on the main page.
 function CarsList({ message, filter = "" }) {
   const [cars, setCars] = useState({ results: [] });
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -29,8 +30,8 @@ function CarsList({ message, filter = "" }) {
         setCars(data);
         setHasLoaded(true);
       } catch (err) {
-      //console.log(err);
-    }
+        //console.log(err);
+      }
     };
 
     setHasLoaded(false);

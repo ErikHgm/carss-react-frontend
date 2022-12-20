@@ -16,6 +16,9 @@ import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
 
+// Component used for creating a car post.
+// Takes input from the user in the forms and post it to the API
+// Includes error handling that shows an alert to the user.
 function CarCreateForm() {
   useRedirect("loggedOut");
 

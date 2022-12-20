@@ -8,6 +8,8 @@ import styles from "../../styles/Car.module.css";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { axiosRes } from "../../api/axiosDefaults";
 
+// Component used to create each car on the landing page
+// Is used by the CarsList component to genereate the complete list of cars.
 const CarList = (props) => {
   const {
     id,

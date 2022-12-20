@@ -13,6 +13,7 @@ import { MoreDropdown } from "../../components/MoreDropdown";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import styles from "../../styles/Car.module.css";
 
+// Component used for creating the car post information.
 const Car = (props) => {
   const {
     id,
@@ -38,6 +39,7 @@ const Car = (props) => {
   const is_owner = currentUser?.username === owner;
   const history = useHistory();
 
+  // Save car posting
   const handleSave = async () => {
     try {
       const { data } = await axiosRes.post("/saved/", { car: id });
@@ -52,6 +54,7 @@ const Car = (props) => {
     }
   };
 
+  // Delete car posting from saved cars
   const handleUnsave = async () => {
     try {
       await axiosRes.delete(`/saved/${save_id}/`);
@@ -70,6 +73,7 @@ const Car = (props) => {
     history.push(`/cars/${id}/edit`);
   };
 
+  // Delete car posting
   const handleDelete = async () => {
     try {
       await axiosRes.delete(`/cars/${id}/`);

@@ -15,6 +15,8 @@ import {
   useParams,
 } from "react-router-dom/cjs/react-router-dom.min";
 
+// Component used for editing an existing car post.
+// Prepopulates the existing data into the form.
 function CarEditForm() {
   const [errors, setErrors] = useState({});
 
